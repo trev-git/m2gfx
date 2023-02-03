@@ -1,10 +1,8 @@
 <script>
-  import M2Logo from "../assets/M2Logo.svelte";
-  import { Route } from "tinro";
 </script>
 
 <nav class="navbar">
-  <M2Logo />
+  <img src="M2Logo.svg" alt="logo">
   <ul class="menu-points">
     <li class="nav-item"><a href="/">Home</a></li>
     <li class="nav-item"><a href="/works">Works</a></li>
@@ -14,7 +12,6 @@
 </nav>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
   .navbar {
     display: flex;
     flex-direction: row;
@@ -28,6 +25,7 @@
     flex-direction: row;
   }
   .nav-item {
+    color: white;
     list-style: none;
     font-family: 'Poppins';
     padding: 5px 20px;

@@ -1,6 +1,6 @@
-<script>
-  export let src = null;
-  export let alt = null;
+<script lang="ts">
+  export let src: string;
+  export let alt: string;
 </script>
 
 <div class="rectangle">

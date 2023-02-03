@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import { CaretRight, ShoppingCartSimple, PaperPlaneTilt, FilmStrip, ClipboardText } from "phosphor-svelte";
-  export let text;
-  export let color = "white";
+  export let text: string;
+  export let color: string = "white";
   export let icon = ShoppingCartSimple;
-  export let border = true;
+  export let border: boolean = true;
 </script>
 
 {#if (border)}

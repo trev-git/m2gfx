@@ -4,7 +4,7 @@
   import ToTop from "./ToTop.svelte";
 </script>
 
-<footer class="footer">
+<footer>
   <div class="left">
     <Text text={"m2 Ⓒ 2023"} />
     <Text text={"coded by trev"} />
@@ -23,12 +23,13 @@
 </footer>
 
 <style>
-  .footer {
+  footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 3rem;
     height: 64px;
+    color: white;
   }
   .left {
     display: flex;

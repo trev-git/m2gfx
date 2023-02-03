@@ -11,7 +11,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
   .content {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     border-radius: 200px;
