@@ -7,15 +7,9 @@
 <footer>
   <div class="left">
     <Text text={"m2 Ⓒ 2023"} />
-    <Text text={"coded by trev"} />
-    <div class="twitter-text">
-      <TwitterLogo weight={"fill"} />
-      <Text text={"view me on twitter"}/>
-    </div>
-    <div class="tos-text">
-      <ClipboardText weight={"fill"}/>
-      <Text text={"view TOS"} />
-    </div>
+    <Text text={"coded by trev"} href={"https://github.com/trev-git"}/>
+    <Text text={"view me on twitter"} href={"https://twitter.com/mattsquare_"} icon={TwitterLogo}/>
+    <Text text={"view TOS"} href={"tos"} icon={ClipboardText}/>
   </div>
   <div class="right">
     <ToTop />
@@ -32,26 +26,11 @@
     color: white;
   }
   .left {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    opacity: 0.3
+    display: inline-flex;
+    gap: 3rem;
   }
   .right {
     display: flex;
     flex-direction: row;
-  }
-  .twitter-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 1rem;
-  }
-  .tos-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 1rem;
   }
 </style>

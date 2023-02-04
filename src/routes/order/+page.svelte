@@ -14,8 +14,8 @@
   </div>
   <p class="text">Here are some estimates for my most popular services. If the status is OPEN, you  can contact me and we'll start discussing the details of your project right away!</p>
   <div class="btns">
-    <Button icon={PaperPlaneTilt} text={"place your order"} color={"#5EE2BB"}/>
-    <Button border={false} text={"view examples"} icon={FilmStrip}/>
+    <Button icon={PaperPlaneTilt} text={"place your order"} color={"#5EE2BB"} href={"order"}/>
+    <Button border={false} text={"view examples"} icon={FilmStrip} href={"works"}/>
   </div>
 </section>
 
@@ -29,7 +29,7 @@
 
 <section class="four">
   <ButtonTos />
-  <Button text={"place your order"} border={true} color={"#5ee2bb"}/>
+  <Button text={"place your order"} border={true} color={"#5ee2bb"} icon={PaperPlaneTilt} href={""}/>
 </section>
 
 <style>

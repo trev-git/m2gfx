@@ -14,7 +14,7 @@
     <img src="Gaming_Overlay_Preview.png" alt="img" />
   </div>
   <div class="btn">
-    <Button text={"view my services"} />
+    <Button text={"view my services"} href={"order"}/>
   </div>
 </section>
 
@@ -30,7 +30,7 @@
   <div class="header">
     <p class="view-some">Are you interested in getting something for yourself?</p>
   </div>
-  <Button text={"commission from me"} />
+  <Button text={"commission from me"} href={"order"}/>
 </section>
 
 <style>

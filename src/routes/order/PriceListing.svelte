@@ -1,7 +1,7 @@
-<script>
-  export let price;
-  export let name;
-  export let description;
+<script lang="ts">
+  export let price: string;
+  export let name: string;
+  export let description: string;
 </script>
 
 <div class="content">

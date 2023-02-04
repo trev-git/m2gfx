@@ -2,14 +2,15 @@
   import { ClipboardText } from "phosphor-svelte";
 </script>
 
-<div class="btn">
+<a class="btn" href="tos">
   <ClipboardText color={"white"} weight={"fill"} size={"18"}/>
   <img class="caret-right" src="caret-right-white.svg" alt="right caret"/>
   <a class="text" href="/tos">view the terms that apply</a>
-</div>
+</a>
 
 <style>
   .btn {
+    all: unset;
     display: inline-flex;
     justify-content: center;
     align-items: center;

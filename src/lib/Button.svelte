@@ -4,6 +4,7 @@
   export let color: string = "white";
   export let icon = ShoppingCartSimple;
   export let border: boolean = true;
+  export let href: string;
 </script>
 
 {#if (border)}
@@ -11,14 +12,14 @@
   <!-- <ShoppingCartSimple color={"black"} weight={"fill"} size={"18"}/> -->
   <svelte:component this={icon} color={"black"} weight={"fill"} size={"18"}/>
   <img class="caret-right" src="caret-right.svg" alt="right caret"/>
-  <a href="#">{text}</a>
+  <a href="{href}">{text}</a>
 </div>
 {:else}
 <div class="btn" style="background-color: {color}; --color: rgba(0,0,0,0)">
   <!-- <ShoppingCartSimple color={"black"} weight={"fill"} size={"18"}/> -->
   <svelte:component this={icon} color={"black"} weight={"fill"} size={"18"}/>
   <img class="caret-right" src="caret-right.svg" alt="right caret"/>
-  <a href="#">{text}</a>
+  <a href="{href}">{text}</a>
 </div>
 {/if}
 

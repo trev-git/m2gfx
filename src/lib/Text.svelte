@@ -1,25 +1,38 @@
-<script>
-  export let text;
+<script lang="ts">
+  export let text: string;
+  export let href: string | null = null;
+  export let icon: any = null;
 </script>
 
-<div class="text">
+<a class="text" {href}>
+  <svelte:component this={icon} weight={"fill"}/>
   <p>{text}</p>
-</div>
+</a>
 
 <style>
-  p {
+  a {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
     color: #fff;
     font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 12px;
     margin: 0;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  p {
+    margin: 0;
   }
   .text {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 1rem;
+    opacity: 0.3;
+    transition: 300ms;
+    font-size: 1rem;
+  }
+  .text:hover {
+    transition: 300ms;
+    opacity: 1;
   }
 </style>
