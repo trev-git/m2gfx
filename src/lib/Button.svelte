@@ -8,47 +8,46 @@
 </script>
 
 {#if (border)}
-<div class="btn" style="background-color: {color}; --color: {color}">
-  <!-- <ShoppingCartSimple color={"black"} weight={"fill"} size={"18"}/> -->
-  <svelte:component this={icon} color={"black"} weight={"fill"} size={"18"}/>
-  <img class="caret-right" src="caret-right.svg" alt="right caret"/>
-  <a href="{href}">{text}</a>
-</div>
+<a {href} type="button" class="btn" style="--color: {color}; outline: 4px solid {color}">
+  <div class="icons">
+    <svelte:component this={icon} weight={"fill"} color={"black"}/>
+    <img src="caret-right.svg" alt="caret"/>
+  </div>
+  <p>{text}</p>
+</a>
 {:else}
-<div class="btn" style="background-color: {color}; --color: rgba(0,0,0,0)">
-  <!-- <ShoppingCartSimple color={"black"} weight={"fill"} size={"18"}/> -->
-  <svelte:component this={icon} color={"black"} weight={"fill"} size={"18"}/>
-  <img class="caret-right" src="caret-right.svg" alt="right caret"/>
-  <a href="{href}">{text}</a>
-</div>
+<button type="button" class="btn" style="--color: {color};">
+  <div class="icons">
+    <svelte:component this={icon} weight={"fill"} color={"black"} size={32}/>
+    <img src="caret-right.svg" alt="caret"/>
+  </div>
+  <p>{text}</p>
+</button>
 {/if}
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
   .btn {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
+    all: unset;
+    display: inline-flex;
     align-items: center;
-    width: 15rem;
-    flex-grow: 1;
-    padding: 0.5rem 1rem;
-    border-radius: 200px;
-    outline: solid 4px var(--color);
-    outline-offset: 6px;
-    margin-right: 2rem;
-  }
-  a {
-    font-family: "Poppins";
-    text-decoration: none;
+    color: black;
+    background-color: var(--color);
+    font-family: 'Poppins';
+    font-size: 24px;
     font-weight: 700;
-    color: black;
-    margin-left: 20px;
+    padding-inline: 3rem;
+    padding-block: 12px;
+    border-radius: 10rem;
+    outline-offset: 6px;
+    gap: 1.5rem;
+    cursor: pointer;
   }
-  a:hover {
-    color: black;
+  p {
+    margin: 0;
   }
-  .caret-right {
-    margin-left: 5px;
+  .icons {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 </style>

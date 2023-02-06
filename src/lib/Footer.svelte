@@ -21,13 +21,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1rem 3rem;
+    padding: 87px 150px;
     height: 64px;
     color: white;
   }
   .left {
     display: inline-flex;
-    gap: 3rem;
+    gap: 4rem;
   }
   .right {
     display: flex;

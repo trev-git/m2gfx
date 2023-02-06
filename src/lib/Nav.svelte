@@ -14,27 +14,28 @@
 <style>
   .navbar {
     display: flex;
-    flex-direction: row;
-    padding: 1rem 3rem;
+    padding: 64px 160px;
     justify-content: space-between;
     align-items: center;
   }
   .menu-points {
     display: flex;
     padding: 0;
-    flex-direction: row;
+    gap: 3rem;
   }
   .nav-item {
     color: white;
     list-style: none;
     font-family: 'Poppins';
-    padding: 5px 20px;
+    padding: 8px 32px;
+    font-size: 1.5rem;
+    font-weight: 500;
     cursor: pointer;
   }
   .order {
     color: black;
     background-color: white;
-    border-radius: 16px;
+    border-radius: 10rem;
   }
   a {
     all: unset;

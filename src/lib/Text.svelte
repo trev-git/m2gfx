@@ -18,7 +18,6 @@
     font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
     margin: 0;
     gap: 1rem;
     cursor: pointer;
@@ -29,7 +28,7 @@
   .text {
     opacity: 0.3;
     transition: 300ms;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .text:hover {
     transition: 300ms;

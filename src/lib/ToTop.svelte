@@ -1,17 +1,17 @@
 <script>
   import CaretUp from "phosphor-svelte/lib/CaretUp";
+
   function toTop() {
     window.scrollTo({ top: 0, behavior: "smooth"});
   }
 </script>
 
-<div class="to-top">
-  <a class="to-top" on:click={toTop}>
-    <p>back to the top</p>
-    <div class="circle">
-      <CaretUp color={"white"} size={"10"} weight={"bold"}/>
-    </div>
-  </a>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div on:click={toTop} class="to-top">
+  <p>back to the top</p>
+  <div class="circle">
+    <CaretUp color={"white"} size={"32"} weight={"bold"}/>
+  </div>
 </div>
 
 <style>
@@ -20,39 +20,37 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 0 1rem;
+    gap: 2rem;
   }
-  p {
+  .to-top > p {
     font-family: "Poppins";
-    font-weight: 900;
-    margin: 0 20px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-block: 14px;
+    margin: 0;
+    transition: 500ms;
+    opacity: 0;
+  }
+  .to-top:hover > p {
+    transition: 300ms;
+    opacity: 1;
   }
   .circle {
-    position: relative;
-    border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-  }
-  .circle::before {
-    position: absolute;
-    content: "";
-    width: 20px;
-    height: 20px;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
-    opacity: 0.2;
+    width: 4rem;
+    height: 4rem;
+  }
+  /* .circle::before {
+    position: absolute;
+    content: '';
+    width: 64px;
+    height: 64px;
     background-color: white;
-  }
-  a {
-    all: unset;
-    cursor: pointer;
-  }
-  a > p {
-    opacity: 0;
-    transition: opacity 1s;
-  }
-  a:hover > p {
-    opacity: 1;
-    transition: opacity 1s;
-  }
+    opacity: 0.1;
+    border-radius: 50%;
+  } */
 </style>
