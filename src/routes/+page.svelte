@@ -1,110 +1,150 @@
 <script>
   import Button from "$lib/Button.svelte";
   import Works from "$lib/Works.svelte";
+  import ButtonTos from "$lib/ButtonTOS.svelte";
+	import KofiLogo from "$lib/KofiLogo.svelte";
+	import { ShoppingCartSimple } from "phosphor-svelte";
 </script>
 
-<section class="top">
-  <div class="textimg">
-    <div class="text">
-      <h1>
-        Hi, <br/> I'm Matt
-      </h1>
-        <p class="desc">I'm a graphics artist from Romania,
-          helping both Creators and Streamers improve
-          their viewers' experience through all things design!</p>
+
+<section class="intro">
+  <div class="intro-layout">
+    <div class="title-layout">
+      <div class="text-layout">
+        <h1 class="heading">Hi, <br /> I'm Matt</h1>
+        <p class="desc">I’m a graphics artist from Romania, helping both Creators and Streamers improve their viewers’ experience through all things design!</p>
+      </div>
+      <div class="btns">
+        <Button text={"services"} icon={ShoppingCartSimple} border={false} color={"#5ee2bb"} href={"order"}/>
+        <ButtonTos href={"#"} icon={KofiLogo} text={"premade shop"}/>
+      </div>
     </div>
-    <div class="img">
+    <div class="img-layout">
       <img src="Gaming_Overlay_Preview.png" alt="img" />
     </div>
   </div>
-  <div class="btn">
-    <Button text={"view my services"} href={"order"} color={"#5ee2bb"}/>
-  </div>
 </section>
 
-<section class="middle">
-  <div class="header">
-    <p class="view-some">View some of my work:</p>
-    <a class="view-more" href="#">View more</a>
+<section class="works">
+  <div class="works-title">
+    <p class="work">View some of my work</p>
+    <a href="/works" class="view-more">view more</a>
   </div>
   <Works />
 </section>
 
-<section class="bottom">
-  <div class="header2">
-    <p class="view-some">Are you interested in getting something for yourself?</p>
+<section class="order">
+  <p class="interested">Are you interested in getting something for yourself?</p>
+  <div class="btn">
+    <Button href={"/order"} icon={ShoppingCartSimple} border={false} text={"order from me"} color={"#5ee2bb"}/>
   </div>
-  <Button text={"commission from me"} href={"order"} color={"#5ee2bb"}/>
 </section>
 
 <style>
-  .textimg {
+  .intro {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
-  .text {
-    width: 50%;
-    color: white;
+  
+  .intro-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
-  .img {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    transform: perspective(1000px) rotateX(5deg) rotateY(-10deg);
-  }
-  h1 {
-    font-family: 'Stretch Pro V2';
-    font-size: 110px;
-    margin-block: 2rem;
-  }
-  p {
-    font-family: 'Poppins';
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-block: 2rem;
-  }
-  .btn {
-    margin-block: 4rem;
-  }
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 
-  }
-  .view-some {
-    margin: 0;
-    padding-block: 0.5rem;
-    font-size: 1.5rem;
-    color: white;
-  }
-  .view-more {
-    all: unset;
+  .title-layout {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    grid-column: 1 / 2;
+    gap: 4rem;
+  }
+
+  .img-layout {
+    grid-column: 2 / 3;
+  }
+
+  .text-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    transform: perspective(5000px) rotateX(-15deg) rotateY(-5deg);
+  }
+
+  .heading {
+    font-family: 'StretchProV2';
+    font-size: 6rem;
+    font-weight: 400;
+    line-height: 6rem;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+
+  .desc {
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0;
+  }
+
+  .btns {
+    display: flex;
+    gap: 2rem;
+    max-width: 100%;
+  }
+
+  .works-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .work {
+    font-family: 'Poppins';
+    font-weight: 800;
+    line-height: 1.5rem;
+    margin: 0;
+  }
+
+  .view-more {
+    all: unset;
+    color: var(--secondary-two);
+    background-color: var(--secondary);
+    font-family: 'Poppins';
+    font-weight: 800;
+    line-height: 1.5rem;
     padding: 0.5rem 2rem;
-    background-color: white;
-    color: black;
+    border-radius: 50rem;
     cursor: pointer;
-    border-radius: 100rem;
+    transition: .2s;
   }
-  .top {
-    margin-bottom: 16rem;
+
+  .view-more:hover {
+    transition: .2s;
+    padding-inline: 3rem;
+    background-color: var(--accent-two);
+    box-shadow: 0 1px 130px 0 rgba(94, 226, 187, 0.5);
   }
-  .middle {
-    margin-bottom: 6rem;
+
+  .works {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
-  .header2 {
-    margin-bottom: 3rem;
+
+  .order {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .interested {
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0;
   }
 </style>

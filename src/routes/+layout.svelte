@@ -11,8 +11,6 @@
 
 <style>
   #content {
-    max-width: 1920px;
-    margin: auto;
     background-color: black;
     background-image: url(gradient.svg);
     background-position: 50% 100%;

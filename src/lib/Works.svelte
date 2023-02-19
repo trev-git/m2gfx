@@ -4,38 +4,35 @@
 
 <div class="grid">
   <div class="left-grid">
-    <div class="grid1">
+    <div class="grid1 grid-element">
       <Picture src={"Gaming_Overlay_Preview.png"} alt={"img"}/>
     </div>
-    <div class="grid2">
+    <div class="grid2 grid-element">
       <Picture src={"Gaming_Overlay_Preview.png"} alt={"img"}/>
     </div>
-    <div class="grid3">
+    <div class="grid3 grid-element">
       <Picture src={"Gaming_Overlay_Preview.png"} alt={"img"}/>
     </div>
   </div>
   <div class="right-grid">
-    <div class="grid4">
+    <div class="grid4 grid-element">
       <Picture src={"Gaming_Overlay_Preview.png"} alt={"img"}/>
     </div>
-    <div class="grid5">
+    <div class="grid5 grid-element">
       <Picture src={"Gaming_Overlay_Preview.png"} alt={"img"}/>
     </div>
-    <div class="grid6">
+    <div class="grid6 grid-element">
       <Picture src={"Gaming_Overlay_Preview.png"} alt={"img"}/>
     </div>
   </div>
 </div>
 
 <style>
-  
   .grid {
     display: grid;
-    margin-block: 2rem;
     grid-template-columns: 2.5fr 2fr;
     grid-auto-rows: min-content;
     gap: 1rem;
-    margin-bottom: 4rem;
   }
   .left-grid {
     display: grid;
