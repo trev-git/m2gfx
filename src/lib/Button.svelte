@@ -1,60 +1,82 @@
 <script lang="ts">
-  import { CaretRight, ShoppingCartSimple, PaperPlaneTilt, FilmStrip, ClipboardText } from "phosphor-svelte";
-  export let text: string;
-  export let color: string = "white";
+  import { ShoppingCartSimple } from "phosphor-svelte"
+	import CaretRight from "$lib/Icons/CaretRight.svelte";
+  
+  export let text: string = 'button text';
+  export let style: '' | 'outlined' | 'secondary' = '';
   export let icon = ShoppingCartSimple;
-  export let border: boolean = true;
-  export let href: string;
+  export let link: string = '/';
+
+  const iconSize: string = '1.5rem';
 </script>
 
-{#if (border)}
-<a {href} type="button" class="btn" style="--color: {color}; outline: 4px solid {color}">
-  <div class="icons">
-    <svelte:component this={icon} weight={"fill"} color={"black"} size={24}/>
-    <img src="caret-right.svg" alt="caret"/>
+<a class={'button ' + style} href={link}>
+  <div class="button-icon-cluster">
+    <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
+    <CaretRight color="currentColor" size=".5rem" />
   </div>
-  <p>{text}</p>
+  <p class="button-text">
+    {text}
+  </p>
 </a>
-{:else}
-<a {href} type="button" class="btn" style="--color: {color};">
-  <div class="icons">
-    <svelte:component this={icon} weight={"fill"} color={"black"} size={24}/>
-    <img src="caret-right.svg" alt="caret"/>
-  </div>
-  <p>{text}</p>
-</a>
-{/if}
 
 <style>
-  .btn {
-    all: unset;
-    display: inline-flex;
+  .button-icon-cluster {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
     align-items: center;
-    color: black;
-    background-color: var(--color);
-    font-family: 'Poppins';
-    font-size: 1rem;
-    font-weight: 800;
-    line-height: 1.5rem;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+  }
+
+  .button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    padding-block: 0.75rem;
     padding-inline: 2rem;
-    padding-block: 12px;
-    border-radius: 10rem;
-    outline-offset: 6px;
-    gap: 1.5rem;
-    cursor: pointer;
-    transition: .2s;
+    border-radius: 1000px;
+    color: var(--secondary-two);
+    background-color: var(--accent-two);
+    box-shadow: 0 2px 130px 0 var(--accent-two-16);
+    -webkit-transition: .2s ease;
+    transition: .2s ease;
   }
-  .btn:hover {
-    transition: .2s;
+
+  .button:hover {
     padding-inline: 3rem;
-    box-shadow: 0 2px 130px 0 rgba(94, 226, 187, 0.5);
+    box-shadow: 0 2px 130px 0 var(--accent-two-50);
   }
-  p {
-    margin: 0;
+
+  .button.outlined {
+    background-color: transparent;
+    color: var(--secondary);
+    outline: 0.15rem solid var(--secondary);
+    box-shadow: none;
   }
-  .icons {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+
+  .button.outlined:hover {
+    box-shadow: none;
+  }
+
+  .button.secondary {
+    background-color: var(--secondary);
+    box-shadow: 0 2px 130px 0 var(--secondary-16);
+  }
+
+  .button.secondary:hover {
+    box-shadow: 0 2px 130px 0 var(--secondary-50);
   }
 </style>

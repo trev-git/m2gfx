@@ -1,20 +1,17 @@
-<script>
+<script lang="ts">
 	import Nav from "$lib/Nav.svelte";
   import Footer from "$lib/Footer.svelte";
+  import Background from "$lib/Background.svelte";
 </script>
 
-<div id="content">
+<div class="page-wrap">
   <Nav />
-  <slot></slot>
-  <Footer />
+  <div class="content-wrap">
+    <slot></slot>
+    <Footer />
+  </div>
+  <Background />
 </div>
 
 <style>
-  #content {
-    background-color: black;
-    background-image: url(gradient.svg);
-    background-position: 50% 100%;
-    background-repeat: no-repeat;
-    background-size: 100%, 10%;
-  }
 </style>

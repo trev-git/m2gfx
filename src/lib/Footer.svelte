@@ -1,36 +1,105 @@
-<script>
-  import { TwitterLogo, ClipboardText } from "phosphor-svelte";
-  import Text from "./Text.svelte";
-  import ToTop from "./ToTop.svelte";
+<script lang="ts">
+  import LogoSmall from "$lib/Icons/LogoSmall.svelte";
+  import KofiLogo from "$lib/Icons/KofiLogo.svelte";
+  import { TwitterLogo, FileCode, ClipboardText } from "phosphor-svelte";
+  import FooterButton from "$lib/FooterButton.svelte";
+
+  const iconSize: string = '2rem';
+  const logoLink: string = '/';
 </script>
 
-<footer>
-  <div class="left">
-    <Text text={"m2 Ⓒ 2023"} />
-    <Text text={"coded by trev"} href={"https://github.com/trev-git"}/>
-    <Text text={"view me on twitter"} href={"https://twitter.com/mattsquare_"} icon={TwitterLogo}/>
-    <Text text={"view TOS"} href={"tos"} icon={ClipboardText}/>
-  </div>
-  <div class="right">
-    <ToTop />
+<footer class="footer">
+  <div class="wrapper footer-wrapper">
+    <div class="space-between">
+      <a class="footer-logo-link" href={logoLink}>
+        <LogoSmall size="4rem" />
+        <p class="button-text">&copy; 2023</p>
+      </a>
+      <div class="footer-logo-small-links">
+          <FooterButton icon={TwitterLogo} link="https://twitter.com/mattsquare_" />
+          <FooterButton icon={KofiLogo} link="https://ko-fi.com/mattsquare" />
+      </div>
+    </div>
+    <div class="_2rem-layout">
+      <div class="footer-small-links">
+        <FooterButton icon={TwitterLogo} link="https://twitter.com/mattsquare_" />
+        <FooterButton icon={KofiLogo} link="https://ko-fi.com/mattsquare" />
+      </div>
+      <FooterButton icon={FileCode} text="coded by trev" link="https://trev-git.github.io/professional-kelp/" />
+      <FooterButton icon={ClipboardText} text="read terms" link="/terms" />
+    </div>
   </div>
 </footer>
 
 <style>
-  footer {
+  footer.footer {
+    width: 100vw;
+    max-width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 87px 150px;
-    height: 64px;
-    color: white;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-block: 2rem;
+    padding-inline: 4rem;
+    column-gap: 4rem;
+    row-gap: 4rem;
+    -webkit-transition: background-color .2s ease;
+    transition: background-color .2s ease;
   }
-  .left {
-    display: inline-flex;
-    gap: 4rem;
+
+  footer.footer:hover {
+    background-color: var(--secondary-two-32);
   }
-  .right {
+
+  .wrapper.footer-wrapper {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    column-gap: 4rem;
+    row-gap: 4rem;
+  }
+
+  .footer-logo-link {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    opacity: 0.3;
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+  }
+
+  .footer-logo-link:hover {
+    opacity: 1;
+  }
+
+  .footer-logo-small-links {
+    display: none;
+    opacity: 0.3;
+  }
+
+  .footer-small-links {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
   }
 </style>
