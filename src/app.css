@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
-	*, *::before, *::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
-			
+
 @font-face {
   font-family: StretchProV2;
   src: url("Stretch Pro V2 - BASIC.otf") format("opentype");
@@ -192,6 +192,20 @@ p {
   row-gap: 2rem;
 }
 
+/* @media (max-width: 1440px) {
+  ._2rem-layout:not(._2rem-layout.nav-links, ._2rem-layout + .footer-small-links) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+} */
+
 ._2rem-layout.vertical {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -239,6 +253,7 @@ h2 {
   font-size: 1.5rem;
   font-weight: 900;
   line-height: 1.5em;
+  margin: 0;
 }
 
 h3 {
@@ -246,6 +261,7 @@ h3 {
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.5em;
+  margin: 0;
 }
 
 .bold-text {
