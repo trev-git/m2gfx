@@ -18,7 +18,6 @@
     <div class="_2rem-layout vertical">
       <Button text="services" link="/" />
       <Button text="premade shop" icon={KofiLogo} style="outlined"  link="https://ko-fi.com/mattsquare" />
-      <Button text="lmaoooooo" icon={KofiLogo} style="secondary"  link="https://ko-fi.com/mattsquare" />
     </div>
   </div>
 </div>
