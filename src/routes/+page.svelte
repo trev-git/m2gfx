@@ -18,7 +18,7 @@
       </p>
     </div>
     <div class="_2rem-layout vertical">
-      <Button text="services" link="/" />
+      <Button text="services" link="/order" />
       <Button text="premade shop" icon={KofiLogo} style="outlined"  link="https://ko-fi.com/mattsquare" />
     </div>
   </div>
