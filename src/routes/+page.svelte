@@ -1,6 +1,8 @@
 <script lang="ts">
   import Button from "$lib/Button.svelte";
+  import NavButton from "$lib/NavButton.svelte";
   import KofiLogo from "$lib/Icons/KofiLogo.svelte";
+  import ShowcaseContainer from "$lib/ShowcaseContainer.svelte";
 </script>
 
 <div class="content grid">
@@ -21,7 +23,30 @@
     </div>
   </div>
 </div>
+<div class="content layouted">
+  <div class="landing-works-link">
+    <h3>
+      View some of my work
+    </h3>
+    <NavButton text="view portofolio" style="active" link="/works" />
+  </div>
+  <ShowcaseContainer />
+</div>
 
 <style>
-
+.landing-works-link {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-between;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+}
 </style>
