@@ -17,6 +17,7 @@
 :root {
   --secondary: #f5f5f5;
   --secondary-50: rgba(245, 245, 245, 0.5);
+  --secondary-32: rgba(245, 245, 245, 0.32);
   --secondary-16: rgba(245, 245, 245, 0.16);
   --secondary-two: #000;
   --secondary-two-32: rgba(0, 0, 0, 0.32);
@@ -116,6 +117,7 @@ p {
   align-items: flex-start;
   column-gap: 2rem;
   row-gap: 2rem;
+  margin-top: 0;
 }
 
 .content.grid {
