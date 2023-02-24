@@ -1,7 +1,7 @@
 <script lang="ts">
-  export let text: string = "button text";
-  export let style: string = "";
-  export let link: string = "/";
+  export let text: string = 'button text';
+  export let style: '' | 'active' = '';
+  export let link: string = '/';
 </script>
 
 <a class={"nav-button " + style} href={link}>
