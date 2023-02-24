@@ -32,7 +32,7 @@
   }
 
   p {
-    font-family: 'Poppins';
+    font-family: Poppins, sans-serif;
   }
 
   p.price {
