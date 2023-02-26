@@ -2,6 +2,7 @@
 	import Nav from "$lib/Nav.svelte";
   import Footer from "$lib/Footer.svelte";
   import Background from "$lib/Background.svelte";
+	import ScrollButton from "$lib/ScrollButton.svelte";
 </script>
 
 <div class="page-wrap">
@@ -10,6 +11,7 @@
     <slot></slot>
     <Footer />
   </div>
+  <ScrollButton />
   <Background />
 </div>
 
