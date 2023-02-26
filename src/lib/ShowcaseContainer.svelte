@@ -20,14 +20,14 @@
     const rotationX = (offsetX - halfWidth) / width * maxDegreeX;
     const rotationY = (offsetY - halfHeight) / height * maxDegreeY;
 
-    style = `transform: perspective(5000px) rotateY(${rotationX}deg) rotateX(${rotationY}deg`;
+    style = `transform: perspective(5000px) rotateY(${rotationX}deg) rotateX(${rotationY}deg) scale(1.05)`;
 
     highlightStyle = `transform: translateX(${-(offsetX - halfWidth) / width * 100}%) translateY(${-(offsetY - halfHeight) / height * 100}%)`
     shadowStyle = `transform: translateX(${(offsetX - halfWidth) / width * 100}%) translateY(${(offsetY - halfHeight) / height * 100}%)`
   }
 
   function resetStyle() {
-    style = `transform: perspective(5000px) rotateY(0deg) rotateX(0deg)`
+    style = `transform: perspective(5000px) rotateY(0deg) rotateX(0deg) scale(1)`
     highlightStyle = `transform: translateX(0) translateY(0)`;
     shadowStyle = `transform: translateX(0) translate(0)`;
   }
@@ -53,10 +53,10 @@
   backface-visibility: hidden;
   -webkit-transform: perspective(800px);
   transform: perspective(800px);
-  -webkit-transition: -webkit-transform .1s ease;
-  transition: -webkit-transform .1s ease;
-  transition: transform .1s ease;
-  transition: transform .1s ease, -webkit-transform .1s ease;
+  -webkit-transition: -webkit-transform .15s ease;
+  transition: -webkit-transform .15s ease;
+  transition: transform .15s ease;
+  transition: transform .15s ease, -webkit-transform .15s ease;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   will-change: transform;
@@ -64,6 +64,7 @@
 
 .showcase-image {
   width: 100%;
+  height: 100%;
 }
 
 .highlight {
