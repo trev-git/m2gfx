@@ -1,33 +1,41 @@
 <script lang="ts">
-export let imageSrc: string = '/Showcase Images/BRB Screen.png';
+  export let imageSrc: string = '/Showcase Images/BRB Screen.png';
 
-const mostX = 9;
-const mostY = 9;
+  let width: number;
+  let height: number;
+  let maxDegreeX = 30;
+  let maxDegreeY = 18;
 
-let width: number;
-let height: number;
+  $: style = `transform: rotateY(0deg) rotateX(0deg);`;
+  $: highlightStyle = "left: 0%; top 0%;";
+  $: shadowStyle = `left: 100%; top 0%;`;
 
-$: style = `transform: rotateY(0deg) rotateX(0deg);`;
+  // this is super laggy, it doesn't use much more cpu than the webflow site but it still is super slow
+  function rotateOnMouseOver(e: MouseEvent) {
+    const { offsetX, offsetY } = e;
 
-// this is super laggy, it doesn't use much more cpu than the webflow site but it still is super slow
-function rotateOnMouseOver (e: MouseEvent) {
-  const x = e.offsetX;
-  const y = e.offsetY;
+    const halfWidth = width / 2;
+    const halfHeight = height / 2;
 
-  const halfWidth = width / 2;
-  const halfHeight = height / 2;
+    const rotationX = (offsetX - halfWidth) / width * maxDegreeX;
+    const rotationY = (offsetY - halfHeight) / height * maxDegreeY;
 
-  //calculate angle angles
-  const rotationX = (((x - halfWidth) / halfWidth) * mostX).toFixed(4);
-  const rotationY = (((y - halfHeight) / halfHeight) * mostY).toFixed(4);
+    style = `transform: rotateY(${rotationY}deg) rotateX(${rotationX}deg`;
 
-  style = `transform: rotateY(${rotationY}deg) rotateX(${rotationX}deg`
-}
+    highlightStyle = `transform: translateX(${-(offsetX - halfWidth) / width * 100}%) translateY(${-(offsetY - halfHeight) / height * 100}%)`
+    shadowStyle = `translateX: ${(offsetX - halfWidth) / width * 100}%; translateY: ${(offsetY - halfHeight) / height * 100}%;`
+  }
+
+  function resetStyle() {
+    style = `transform: perspective(5000px) rotateY(0deg) rotateX(0deg)`
+    highlightStyle = `left: 0%; top: 0%`;
+    shadowStyle = `left: 100%; top: 0%`;
+  }
 </script>
 
-<div class="showcase-container" on:mousemove={rotateOnMouseOver} bind:clientWidth={width} bind:clientHeight={height} style={style}>
-  <div class="highlight"></div>
-  <div class="shadow"></div>
+<div class="showcase-container" on:mousemove={rotateOnMouseOver} on:mouseleave={resetStyle} bind:clientWidth={width} bind:clientHeight={height} style={style}>
+  <div class="highlight" style={highlightStyle}></div>
+  <div class="shadow" style={shadowStyle}></div>
   <img
     class="showcase-image"
     alt="Work Showcase"
@@ -49,6 +57,8 @@ function rotateOnMouseOver (e: MouseEvent) {
   transition: -webkit-transform .1s ease;
   transition: transform .1s ease;
   transition: transform .1s ease, -webkit-transform .1s ease;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 .showcase-image {
@@ -62,7 +72,7 @@ function rotateOnMouseOver (e: MouseEvent) {
   right: auto;
   bottom: auto;
   width: 75%;
-  height: 125%;
+  height: 100%;
   border-radius: 50%;
   background-color: white;
   opacity: 0.12;
@@ -81,7 +91,7 @@ function rotateOnMouseOver (e: MouseEvent) {
   right: 0%;
   bottom: 0%;
   width: 75%;
-  height: 125%;
+  height: 100%;
   border-radius: 50%;
   background-color: black;
   opacity: 0.12;
