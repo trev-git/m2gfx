@@ -20,16 +20,16 @@
     const rotationX = (offsetX - halfWidth) / width * maxDegreeX;
     const rotationY = (offsetY - halfHeight) / height * maxDegreeY;
 
-    style = `transform: rotateY(${rotationY}deg) rotateX(${rotationX}deg`;
+    style = `transform: perspective(5000px) rotateY(${rotationY}deg) rotateX(${rotationX}deg`;
 
     highlightStyle = `transform: translateX(${-(offsetX - halfWidth) / width * 100}%) translateY(${-(offsetY - halfHeight) / height * 100}%)`
-    shadowStyle = `translateX: ${(offsetX - halfWidth) / width * 100}%; translateY: ${(offsetY - halfHeight) / height * 100}%;`
+    shadowStyle = `transform: translateX(${(offsetX - halfWidth) / width * 100}%) translateY(${(offsetY - halfHeight) / height * 100}%)`
   }
 
   function resetStyle() {
     style = `transform: perspective(5000px) rotateY(0deg) rotateX(0deg)`
-    highlightStyle = `left: 0%; top: 0%`;
-    shadowStyle = `left: 100%; top: 0%`;
+    highlightStyle = `transform: translateX(0) translateY(0)`;
+    shadowStyle = `transform: translateX(0) translate(0)`;
   }
 </script>
 
@@ -59,6 +59,7 @@
   transition: transform .1s ease, -webkit-transform .1s ease;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .showcase-image {
