@@ -4,7 +4,7 @@
   let width: number;
   let height: number;
   let maxDegreeX = 30;
-  let maxDegreeY = 18;
+  let maxDegreeY = -18;
 
   $: style = `transform: rotateY(0deg) rotateX(0deg);`;
   $: highlightStyle = "left: 0%; top 0%;";
@@ -20,7 +20,7 @@
     const rotationX = (offsetX - halfWidth) / width * maxDegreeX;
     const rotationY = (offsetY - halfHeight) / height * maxDegreeY;
 
-    style = `transform: perspective(5000px) rotateY(${rotationY}deg) rotateX(${rotationX}deg`;
+    style = `transform: perspective(5000px) rotateY(${rotationX}deg) rotateX(${rotationY}deg`;
 
     highlightStyle = `transform: translateX(${-(offsetX - halfWidth) / width * 100}%) translateY(${-(offsetY - halfHeight) / height * 100}%)`
     shadowStyle = `transform: translateX(${(offsetX - halfWidth) / width * 100}%) translateY(${(offsetY - halfHeight) / height * 100}%)`
