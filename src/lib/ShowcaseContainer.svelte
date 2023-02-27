@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let imageSrc: string = '/Showcase Images/BRB Screen.png';
+  export let imageSrc: string = '/Showcase Images/Oofu BRB Screen.png';
 
   let width: number;
   let height: number;
