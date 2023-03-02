@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from "svelte";
   import { ShoppingCartSimple } from "phosphor-svelte"
 	import CaretRight from "$lib/Icons/CaretRight.svelte";
   
@@ -8,10 +9,34 @@
   export let link: string = '/';
 
   const iconSize: string = '1.5rem';
+
+  let buttonWidth: number;
+  let buttonHeight: number;
+
+  $: borderWidth = buttonWidth + 12;
+  $: borderHeight = buttonHeight + 12;
+
+  $: spinSpeed = 0.5;
+  $: spinOffset = 0;
+
+  onMount(() => {
+    let frame = requestAnimationFrame(loop);
+
+    function loop() {
+      frame = requestAnimationFrame(loop);
+
+      spinOffset = spinOffset - spinSpeed;
+    }
+
+    return (()=> {
+      cancelAnimationFrame(frame);
+    })
+  })
 </script>
 
-<div class="button-container">
-  <a class={'button ' + style} href={link}>
+<!-- svelte-ignore a11y-mouse-events-have-key-events -->
+<div class="button-container" on:mouseover={(e)=> {spinSpeed = 2;}} on:mouseleave={(e) => {spinSpeed = 0.5;}}>
+  <a class={'button ' + style} href={link} bind:clientWidth={buttonWidth} bind:clientHeight={buttonHeight}>
     <div class="button-icon-cluster">
       <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
       <CaretRight color="currentColor" size=".5rem" />
@@ -20,8 +45,8 @@
       {text}
     </p>
   </a>
-  <svg width="215" height="64" viewBox="0 0 215 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2" y="2" width="211" height="60" rx="30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="20 10"/>
+  <svg width={borderWidth + 4} height={borderHeight + 4} viewBox="0 0 {borderWidth + 4} {borderHeight + 4}" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width={borderWidth} height={borderHeight} rx="30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="56 10 36 10 8 10 34 10" stroke-dashoffset={spinOffset}/>
   </svg>
 </div>
 
