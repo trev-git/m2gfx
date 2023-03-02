@@ -10,17 +10,26 @@
   const iconSize: string = '1.5rem';
 </script>
 
-<a class={'button ' + style} href={link}>
-  <div class="button-icon-cluster">
-    <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
-    <CaretRight color="currentColor" size=".5rem" />
-  </div>
-  <p class="button-text">
-    {text}
-  </p>
-</a>
+<div class="button-container">
+  <a class={'button ' + style} href={link}>
+    <div class="button-icon-cluster">
+      <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
+      <CaretRight color="currentColor" size=".5rem" />
+    </div>
+    <p class="button-text">
+      {text}
+    </p>
+  </a>
+  <svg width="215" height="64" viewBox="0 0 215 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="211" height="60" rx="30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="20 10"/>
+  </svg>
+</div>
 
 <style>
+  .button-container {
+    position: relative;
+  }
+
   .button-icon-cluster {
     display: -webkit-box;
     display: -webkit-flex;
@@ -59,12 +68,24 @@
     padding-inline: 3rem;
     box-shadow: 0 2px 130px 0 var(--accent-two-50);
   }
+  
+  svg {
+    color: var(--accent-two);
+    position: absolute;
+    left: -.5rem;
+    top: -.5rem;
+    z-index: -5;
+  }
 
   .button.outlined {
     background-color: transparent;
     color: var(--secondary);
     outline: 0.15rem solid var(--secondary);
     box-shadow: none;
+  }
+
+  .button.outlined + svg {
+    display: none;
   }
 
   .button.outlined:hover {
@@ -74,6 +95,10 @@
   .button.secondary {
     background-color: var(--secondary);
     box-shadow: 0 2px 130px 0 var(--secondary-16);
+  }
+
+  .button.secondary + svg {
+    color: var(--secondary);
   }
 
   .button.secondary:hover {
