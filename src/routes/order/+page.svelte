@@ -157,7 +157,7 @@
   <h3>Have you decided?</h3>
   <div class="_2rem-layout">
     <Button text={"get in touch"} icon={PaperPlaneTilt} link={"/contact"}/>
-    <Button text={"read the terms"} icon={ClipboardText} style={"outlined"} link={"/tos"} />
+    <Button text={"read the terms"} icon={ClipboardText} style={"outlined"} link={"/terms"} />
   </div>
 </div>
 
