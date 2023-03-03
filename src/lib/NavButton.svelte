@@ -32,6 +32,6 @@
 
   .nav-button.active:hover {
     background-color: var(--accent-two);
-    box-shadow: 0 2px 130px 0 var(--accent-two-50);
+    box-shadow: 0 2px 130px 0 var(--accent-two);
   }
 </style>

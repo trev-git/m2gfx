@@ -91,7 +91,7 @@
 
   .button:hover {
     padding-inline: 3rem;
-    box-shadow: 0 2px 130px 0 var(--accent-two-50);
+    box-shadow: 0 2px 130px 0 var(--accent-two);
   }
   
   svg {
@@ -127,6 +127,6 @@
   }
 
   .button.secondary:hover {
-    box-shadow: 0 2px 130px 0 var(--secondary-50);
+    box-shadow: 0 2px 130px 0 var(--secondary);
   }
 </style>
