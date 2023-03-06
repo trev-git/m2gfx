@@ -7,6 +7,8 @@
   export let style: '' | 'outlined' | 'secondary' = '';
   export let icon = ShoppingCartSimple;
   export let link: string = '/';
+  export let type: "button" | "submit" | "reset" | null | undefined = "button";
+  export let form: string = "";
 
   const iconSize: string = '1.5rem';
 
@@ -35,7 +37,7 @@
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<div class="button-container" on:mouseover={(e)=> {spinSpeed = 2;}} on:mouseleave={(e) => {spinSpeed = 0.5;}}>
+<button {type} {form} class="button-container" on:mouseover={(e)=> {spinSpeed = 2;}} on:mouseleave={(e) => {spinSpeed = 0.5;}}>
   <a class={'button ' + style} href={link} bind:clientWidth={buttonWidth} bind:clientHeight={buttonHeight}>
     <div class="button-icon-cluster">
       <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
@@ -48,9 +50,13 @@
   <svg width={borderWidth + 4} height={borderHeight + 4} viewBox="0 0 {borderWidth + 4} {borderHeight + 4}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="2" y="2" width={borderWidth} height={borderHeight} rx="30" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-dasharray="56 10 36 10 8 10 34 10" stroke-dashoffset={spinOffset}/>
   </svg>
-</div>
+</button>
 
 <style>
+  button {
+    all: unset;
+  }
+
   .button-container {
     position: relative;
   }
