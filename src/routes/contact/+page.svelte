@@ -19,15 +19,13 @@
   </div>
 </div>
 
-<div class="content">
+<div class="content layouted">
   <form id="contact-form" action="submit" class="grid">
     <InputBox placeholder={"john.doe@gmail.com"} type={"email"} label={"Subject *"}/>
     <InputBox placeholder={"Write a short, general overview of your project."} label={"Title *"}/>
     <InputBox placeholder={"Give me a few details of what your project is about, what I should know etc."} multiline={true} label={"Project Details *"}/>
   </form>
-  <div class="_2rem-layout">
-    <Button icon={PlusCircle} text={"Submit request"} type={"submit"} form={"contact-form"} link={"/lmao"} />
-  </div>
+  <Button icon={PlusCircle} text={"Submit request"} type={"submit"} style={"secondary"} form={"contact-form"} link={"/lmao"} />
 </div>
 
 <style>
@@ -45,6 +43,7 @@
   }
   #contact-form {
     margin-bottom: 2rem;
+    width: 100%;
   }
   .content:nth-child(2) {
     margin-top: 0;
