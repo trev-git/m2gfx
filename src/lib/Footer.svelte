@@ -16,16 +16,16 @@
         <p class="button-text">&copy; 2023</p>
       </a>
       <div class="footer-logo-small-links">
-          <FooterButton icon={TwitterLogo} link="https://twitter.com/mattsquare_" />
+          <FooterButton icon={TwitterLogo} link="https://twitter.com/mattsquare_" newTab={true} />
           <FooterButton icon={KofiLogo} link="https://ko-fi.com/mattsquare" />
       </div>
     </div>
     <div class="_2rem-layout">
       <div class="footer-small-links">
-        <FooterButton icon={TwitterLogo} link="https://twitter.com/mattsquare_" />
-        <FooterButton icon={KofiLogo} link="https://ko-fi.com/mattsquare" />
+        <FooterButton icon={TwitterLogo} link="https://twitter.com/mattsquare_" newTab={true} />
+        <FooterButton icon={KofiLogo} link="https://ko-fi.com/mattsquare" newTab={true} />
       </div>
-      <FooterButton icon={FileCode} text="coded by trev" link="https://trev-git.github.io/professional-kelp/" />
+      <FooterButton icon={FileCode} text="coded by trev" link="https://trev-git.github.io/professional-kelp/" newTab={true} />
       <FooterButton icon={ClipboardText} text="read terms" link="/terms" />
     </div>
   </div>

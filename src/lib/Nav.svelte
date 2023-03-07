@@ -3,25 +3,22 @@
   import NavButton from "$lib/NavButton.svelte";
 
   const logoLink: string = '/';
-  const navButtons: {text: string, style: string, link: string}[] = [
+  const navButtons: {text: string, style?: '' | 'active', link: string, newTab?: boolean}[] = [
     {
       text: 'home',
-      style: '',
       link: '/'
     },
     {
       text: 'donate',
-      style: '',
-      link: 'https://ko-fi.com/mattsquare'
+      link: 'https://ko-fi.com/mattsquare',
+      newTab: true
     },
     {
       text: 'works',
-      style: '',
       link: '/works'
     },
     {
       text: 'contact',
-      style: '',
       link: '/contact'
     },
     {
@@ -39,7 +36,7 @@
     </a>
     <div class="_2rem-layout nav-links">
       {#each navButtons as button}
-        <NavButton text={button.text} style={button.style} link={button.link} />
+        <NavButton text={button.text} style={button.style} link={button.link} newTab={button.newTab} />
       {/each}
     </div>
   </div>

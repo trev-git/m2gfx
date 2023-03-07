@@ -2,9 +2,20 @@
   export let text: string = 'button text';
   export let style: '' | 'active' = '';
   export let link: string = '/';
+  export let newTab: boolean = false;
+
+  function openNewTab () {
+    if (newTab) {
+      return '_blank';
+    }
+
+    else {
+      return '';
+    }
+  }
 </script>
 
-<a class={"nav-button " + style} href={link}>
+<a class={"nav-button " + style} href={link} target={openNewTab()} >
   <p class="button-text">{text}</p>
 </a>
 

@@ -4,11 +4,22 @@
   export let text: string = '';
   export let icon = TwitterLogo;
   export let link: string = '/';
+  export let newTab: boolean = false;
 
   const iconSize: string = '2rem';
+
+  function openNewTab () {
+    if (newTab) {
+      return '_blank';
+    }
+    
+    else {
+      return '';
+    }
+  }
 </script>
 
-<a class="footer-button" href={link}>
+<a class="footer-button" href={link} target={openNewTab()}>
   <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
   {#if text !== ''}
     <p class="button-text">
