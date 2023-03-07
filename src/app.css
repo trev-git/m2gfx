@@ -46,6 +46,12 @@ p {
 }
 
 /* animations */
+@media (prefers-reduced-motion: reduced) {
+  .content {
+    animation: none;
+  }
+}
+
 @keyframes fade-in {
   from {opacity: 0%;}
   to {opacity: 100%;}
@@ -109,11 +115,6 @@ p {
   animation-iteration-count: 1;
 }
 
-@media (prefers-reduced-motion: reduced) {
-  .content {
-    animation: none;
-  }
-}
 
 .content.layouted {
   display: -webkit-box;
