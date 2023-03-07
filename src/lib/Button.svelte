@@ -7,10 +7,21 @@
   export let style: '' | 'outlined' | 'secondary' = '';
   export let icon = ShoppingCartSimple;
   export let link: string = '/';
-  export let type: "button" | "submit" | "reset" | null | undefined = "button";
+  export let newTab: boolean = false;
+  export let type: "button" | "submit" | "reset" | undefined = "button";
   export let form: string = "";
 
   const iconSize: string = '1.5rem';
+
+  function openNewTab () {
+    if (newTab) {
+      return "_blank";
+    }
+
+    else {
+      return "";
+    }
+  }
 
   let buttonWidth: number;
   let buttonHeight: number;
@@ -38,7 +49,7 @@
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <button {type} {form} class="button-container" on:mouseover={(e)=> {spinSpeed = 2;}} on:mouseleave={(e) => {spinSpeed = 0.5;}}>
-  <a class={'button ' + style} href={link} bind:clientWidth={buttonWidth} bind:clientHeight={buttonHeight}>
+  <a class={'button ' + style} href={link} target={openNewTab()} bind:clientWidth={buttonWidth} bind:clientHeight={buttonHeight}>
     <div class="button-icon-cluster">
       <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
       <CaretRight color="currentColor" size=".5rem" />
