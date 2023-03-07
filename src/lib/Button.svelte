@@ -48,8 +48,19 @@
 </script>
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
-<button {type} {form} class="button-container" on:mouseover={(e)=> {spinSpeed = 2;}} on:mouseleave={(e) => {spinSpeed = 0.5;}}>
-  <a class={'button ' + style} href={link} target={openNewTab()} bind:clientWidth={buttonWidth} bind:clientHeight={buttonHeight}>
+<button
+  {type}
+  {form}
+  class="button-container"
+  on:mouseover={(e)=> {spinSpeed = 2;}}
+  on:mouseleave={(e) => {spinSpeed = 0.5;}}
+>
+  <a
+    class={'button ' + style}
+    href={link} target={openNewTab()}
+    bind:clientWidth={buttonWidth}
+    bind:clientHeight={buttonHeight}
+  >
     <div class="button-icon-cluster">
       <svelte:component this={icon} color="currentColor" weight="fill" size={iconSize} />
       <CaretRight color="currentColor" size=".5rem" />
