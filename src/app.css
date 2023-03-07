@@ -45,6 +45,12 @@ p {
   margin: 0;
 }
 
+/* animations */
+@keyframes fade-in {
+  from {opacity: 0%;}
+  to {opacity: 100%;}
+}
+
 /* general layouts */
 
 .page-wrap {
@@ -99,6 +105,14 @@ p {
   margin-block: 6rem;
   margin-inline: 0;
   padding-inline: 8rem;
+  animation: fade-in 0.5s;
+  animation-iteration-count: 1;
+}
+
+@media (prefers-reduced-motion: reduced) {
+  .content {
+    animation: none;
+  }
 }
 
 .content.layouted {
