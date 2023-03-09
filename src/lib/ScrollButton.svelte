@@ -20,9 +20,6 @@
 
 <style>
   .scroll-button {
-    position: fixed;
-    bottom: 3rem;
-    right: 4rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
