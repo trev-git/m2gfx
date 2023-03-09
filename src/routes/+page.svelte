@@ -28,11 +28,14 @@
     <h3>
       View some of my work
     </h3>
-    <NavButton text="view portofolio" style="active" link="/works" />
+    <NavButton text="view portfolio" style="active" link="/works" />
   </div>
   <ShowcaseContainer />
 </div>
-
+<div class="content layouted">
+  <p class="bold-text">Are you interested in getting something for yourself?</p>
+  <Button text={"commission from me"} link={"/order"} type={"button"} />
+</div>
 <style>
 .landing-works-link {
   width: 100%;
