@@ -3,8 +3,7 @@
   import KofiLogo from "$lib/Icons/KofiLogo.svelte";
   import { TwitterLogo, FileCode, ClipboardText } from "phosphor-svelte";
   import FooterButton from "$lib/FooterButton.svelte";
-
-  const iconSize: string = '2rem';
+  
   const logoLink: string = '/';
 </script>
 
