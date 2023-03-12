@@ -21,7 +21,7 @@
 
 <div class="content layouted">
   <form id="contact-form" action="submit" class="grid">
-    <InputBox placeholder={"john.doe@gmail.com"} type={"email"} label={"Subject *"}/>
+    <InputBox placeholder={"john.doe@gmail.com"} type={"email"} label={"Your email *"}/>
     <InputBox placeholder={"Write a short, general overview of your project."} label={"Title *"}/>
     <InputBox placeholder={"Give me a few details of what your project is about, what I should know etc."} multiline={true} label={"Project Details *"}/>
   </form>
