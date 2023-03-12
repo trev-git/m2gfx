@@ -42,14 +42,15 @@
   textarea {
     resize: vertical;
     max-height: 1000px;
+    min-height: 100px
   }
   .wrap {
     position: relative;
   }
   img {
     position: absolute;
-    right: 8px;
-    bottom: 4px;
+    right: 1rem;
+    bottom: 1rem;
     pointer-events: none;
     z-index: 1;
   }
