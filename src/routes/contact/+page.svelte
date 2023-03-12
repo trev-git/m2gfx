@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from "$lib/Button.svelte";
-	import { ClipboardText, Placeholder, PlusCircle, ShoppingCart } from "phosphor-svelte";
-	import InputBox from "./InputBox.svelte";
+  import { ClipboardText, PlusCircle, ShoppingCart } from "phosphor-svelte";
+  import InputBox from "./InputBox.svelte";
 </script>
 
 <div class="content">
@@ -25,7 +25,9 @@
     <InputBox placeholder={"Write a short, general overview of your project."} label={"Title *"}/>
     <InputBox placeholder={"Give me a few details of what your project is about, what I should know etc."} multiline={true} label={"Project Details *"}/>
   </form>
-  <Button icon={PlusCircle} text={"Submit request"} type={"submit"} style={"secondary"} form={"contact-form"} link={"/lmao"} />
+  <div class="form-button">
+    <Button icon={PlusCircle} text={"Submit request"} type={"submit"} style={"secondary"} form={"contact-form"} link={"/lmao"} />
+  </div>
 </div>
 
 <style>
@@ -47,5 +49,13 @@
   }
   .content:nth-child(2) {
     margin-top: 0;
+  }
+  #contact-form:valid + .form-button {
+    opacity: 1;
+    transition: opacity .2s;
+  }
+  #contact-form:invalid + .form-button {
+    opacity: 0.5;
+    transition: opacity .2s;
   }
 </style>
