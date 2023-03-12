@@ -21,7 +21,8 @@
 
 <style>
   .scroll-wrapper {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     bottom: 3rem;
     padding-inline: 4rem;
     display: flex;

@@ -83,6 +83,7 @@
     opacity: 0.3;
     -webkit-transition: opacity .2s ease;
     transition: opacity .2s ease;
+    z-index: 1000;
   }
 
   .footer-logo-link:hover {
