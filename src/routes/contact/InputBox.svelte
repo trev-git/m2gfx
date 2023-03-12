@@ -35,7 +35,7 @@
   input:invalid:not(:placeholder-shown) {
     border: 4px solid var(--accent);
   }
-  input:valid, textarea:valid {
+  input:focus, textarea:focus {
     border: 4px solid var(--accent-two);
     transition: border .2s ease-in-out;
   }
