@@ -41,6 +41,7 @@
   }
   textarea {
     resize: vertical;
+    max-height: 1000px;
   }
   .wrap {
     position: relative;
