@@ -20,6 +20,7 @@
 
 <style>
   .scroll-button {
+    pointer-events: all;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

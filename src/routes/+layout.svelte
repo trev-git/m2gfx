@@ -21,6 +21,7 @@
 
 <style>
   .scroll-wrapper {
+    pointer-events: none;
     position: fixed;
     width: 100%;
     bottom: 3rem;
