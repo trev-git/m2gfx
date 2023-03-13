@@ -10,7 +10,7 @@
   <div class="title-layout">
     <div class="title-text-layout">
       <h1>Contact</h1>
-      <p class="normal-text">If you have your idea ready for a project, get in touch with me right away, and I’ll give you an estimate of the cost in a moment’s notice!</p>
+      <p class="normal-text">If you have your idea ready for a project, get in touch with me right away, and I&#x27;ll contact you to discuss the details of your project and give you an estimate of the cost right awayz!</p>
       <p class="normal-text">You can alternatively email me at:</p>
       <a class="normal-text email" href="mailto:m2.matt2e2@gmail.com">m2.matt2e2@gmail.com</a>
     </div>
@@ -23,9 +23,9 @@
 
 <div class="content layouted">
   <form id="contact-form" action="submit" class="grid">
-    <InputBox placeholder={"john.doe@gmail.com"} type={"email"} label={"Your email *"}/>
-    <InputBox placeholder={"Write a short, general overview of your project."} label={"Title *"}/>
-    <InputBox placeholder={"Give me a few details of what your project is about, what I should know etc."} multiline={true} label={"Project Details *"}/>
+    <InputBox placeholder={"john.doe@gmail.com"} type={"email"} label={"Your email"} required={true}/>
+    <InputBox placeholder={"Write a short, general overview of your project."} label={"Title"} required={true}/>
+    <InputBox placeholder={"Give me a few details of what your project is about, what I should know etc."} multiline={true} label={"Project Details"} required={true}/>
   </form>
   <div class="form-button">
     <Button icon={PlusCircle} text={"Submit request"} type={"submit"} style={"secondary"} form={"contact-form"} link={"/lmao"} />
@@ -60,7 +60,7 @@
     opacity: 1;
     transition: opacity .2s;
   }
-  
+
   #contact-form:invalid + .form-button {
     pointer-events: none;
     opacity: 0.5;
