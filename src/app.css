@@ -45,6 +45,10 @@ p {
   margin: 0;
 }
 
+input:focus, textarea:focus {
+  outline: none;
+}
+
 /* animations */
 @media (prefers-reduced-motion: reduced) {
   .content {
