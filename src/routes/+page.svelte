@@ -26,20 +26,35 @@
   </div>
 </div>
 <div class="content layouted">
-  <div class="landing-works-link">
+  <div class="works-link">
     <h3>
       View some of my work
     </h3>
     <NavButton text="view portfolio" style="active" link="/works" />
   </div>
-  <ShowcaseContainer />
+  <div class="works-grid">
+    <div class="works-grid-column">
+      <ShowcaseContainer />
+      <div class="works-grid-row">
+        <ShowcaseContainer />
+        <ShowcaseContainer />
+      </div>
+    </div>
+    <div class="works-grid-column">
+      <ShowcaseContainer />
+      <div class="works-grid-row">
+        <ShowcaseContainer />
+        <ShowcaseContainer />
+      </div>
+    </div>
+  </div>
 </div>
 <div class="content layouted">
   <p class="bold-text">Are you interested in getting something for yourself?</p>
   <Button text={"commission from me"} link={"/order"} type={"button"} />
 </div>
 <style>
-.landing-works-link {
+.works-link {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -53,5 +68,39 @@
   -webkit-justify-content: space-between;
   -ms-flex-pack: space-between;
   justify-content: space-between;
+}
+
+.works-grid {
+  display: grid;
+  justify-items: stretch;
+  align-items: start;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1.25fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.works-grid-column {
+  display: grid;
+  justify-items: stretch;
+  align-items: start;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.works-grid-row {
+  display: grid;
+  justify-items: stretch;
+  align-items: start;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  row-gap: 2rem;
 }
 </style>
