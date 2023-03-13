@@ -36,15 +36,18 @@
   .email {
     color: var(--accent-two);
   }
+
   .email:hover {
     text-decoration: underline;
   }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 4rem;
     row-gap: 2rem;
   }
+
   #contact-form {
     margin-bottom: 2rem;
     width: 100%;
@@ -52,11 +55,14 @@
   .content:nth-child(2) {
     margin-top: 0;
   }
+
   #contact-form:valid + .form-button {
     opacity: 1;
     transition: opacity .2s;
   }
+  
   #contact-form:invalid + .form-button {
+    pointer-events: none;
     opacity: 0.5;
     transition: opacity .2s;
   }
