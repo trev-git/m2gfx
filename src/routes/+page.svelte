@@ -1,10 +1,12 @@
 <script lang="ts">
+  import MetaTitle from "$lib/MetaTitle.svelte";
   import Button from "$lib/Button.svelte";
   import NavButton from "$lib/NavButton.svelte";
   import KofiLogo from "$lib/Icons/KofiLogo.svelte";
   import ShowcaseContainer from "$lib/ShowcaseContainer.svelte";
 </script>
 
+<MetaTitle title="Home" />
 <div class="content grid">
   <div class="title-layout">
     <div class=title-text-layout>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import MetaTitle from "$lib/MetaTitle.svelte";
   import { PaperPlaneTilt, FilmStrip, PlusCircle, Package, ClipboardText } from "phosphor-svelte";
   import Button from "$lib/Button.svelte";
 	import Header from "./Header.svelte";
@@ -95,6 +96,7 @@
   ]
 </script>
 
+<MetaTitle title="Order" />
 <div class="content grid">
   <div class="title-layout">
     <div class="title-text-layout">

@@ -1,11 +1,12 @@
 <script lang="ts">
+  import MetaTitle from "$lib/MetaTitle.svelte";
   import Term from "./Term.svelte";
   import Button from "$lib/Button.svelte";
   import { PaperPlaneTilt, ShoppingCart } from "phosphor-svelte";
 
-  type pointsOfTerm = { number: number, title: string, items: string[], display?: boolean};
+  type termPoints = { number: number, title: string, items: string[], display?: boolean};
 
-  const points: pointsOfTerm[] = [
+  const points: termPoints[] = [
     {
       number: 1,
       title: "Preamble",
@@ -103,6 +104,7 @@
   ];
 </script>
 
+<MetaTitle title="ToS" />
 <div class="content grid">
   <div class="title-layout">
     <div class="title-text-layout">

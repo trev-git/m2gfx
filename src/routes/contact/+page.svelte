@@ -1,9 +1,11 @@
 <script lang="ts">
+  import MetaTitle from "$lib/MetaTitle.svelte";
   import Button from "$lib/Button.svelte";
   import { ClipboardText, PlusCircle, ShoppingCart } from "phosphor-svelte";
   import InputBox from "./InputBox.svelte";
 </script>
 
+<MetaTitle title="Contact" />
 <div class="content">
   <div class="title-layout">
     <div class="title-text-layout">
