@@ -46,7 +46,6 @@
 <style>
 .showcase-container {
   position: relative;
-  overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 16px 90px var(--secondary-two-32);
   -webkit-backface-visibility: hidden;
@@ -62,9 +61,10 @@
   will-change: transform;
 }
 
-.showcase-image {
+img {
   width: 100%;
   height: 100%;
+  border-radius: 1rem;
 }
 
 .highlight {
