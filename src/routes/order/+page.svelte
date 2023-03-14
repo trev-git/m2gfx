@@ -5,7 +5,23 @@
 	import Header from "./Header.svelte";
 	import PriceListing from "./PriceListing.svelte";
 	import QueueStatus from "./QueueStatus.svelte";
+  import { onMount } from 'svelte';
 
+  onMount(() => {
+    let contents = document.querySelectorAll('.content');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          console.log(target);
+          target.style.opacity = '1';
+        }
+      });
+    });
+    for (const content of contents) {
+      observer.observe(content);
+    }
+  });
   type priceEntryList = { price: string, title: string, value?: string, desc: string }[];
 
   const pricesVtubers: priceEntryList = [

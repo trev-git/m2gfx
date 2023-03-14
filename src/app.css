@@ -117,6 +117,8 @@ input:focus, textarea:focus {
   padding-inline: 8rem;
   animation: fade-in 0.5s;
   animation-iteration-count: 1;
+  transition: opacity .5s;
+  opacity: 0;
 }
 
 
